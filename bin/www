@@ -5,14 +5,13 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('NodeMaintainer:server');
 var http = require('http');
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '8406');
+var port = normalizePort('8406');
 app.set('port', port);
 
 /**
@@ -43,6 +42,7 @@ function normalizePort(val) {
 
   if (port >= 0) {
     // port number
+    console.log("port is :" + port)
     return port;
   }
 
@@ -86,5 +86,4 @@ function onListening() {
   var bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
-  debug('Listening on ' + bind);
 }
