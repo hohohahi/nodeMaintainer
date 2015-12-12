@@ -1,3 +1,7 @@
+var filePath = "/home/om/OddsMatrixDeploy/web/node"
+var prefix = "server="
+var INVALID_STATUS = "invalid status"
+
 exports.isStatusSupported = function(status){
 	var isSupported = true;
 	if ("enabled" == status || "disabled" == status){
@@ -31,8 +35,8 @@ exports.writeContentToFile = function(content){
 	});
 }
 
-exports.assembleNewContent function(status){
+exports.assembleNewContent = function(status){
 	content = prefix + status;
-	
+
 	return content;
 }

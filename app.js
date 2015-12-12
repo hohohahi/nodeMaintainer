@@ -8,10 +8,8 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var app = express();
 
-var filePath = "/home/om/OddsMatrixDeploy/web/node"
-var prefix = "server="
+
 var fs = require('fs');
-var INVALID_STATUS = "invalid status"
 var nodeUtil = require('./public/javascripts/nodeUtil.js');
 
 // view engine setup
