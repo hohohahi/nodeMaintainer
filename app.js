@@ -4,11 +4,15 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
 var app = express();
+
+var filePath = "/home/om/OddsMatrixDeploy/web/node"
+var prefix = "server="
+var fs = require('fs');
+var INVALID_STATUS = "invalid status"
+var nodeUtil = require('./public/javascripts/nodeUtil.js');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -56,5 +60,32 @@ app.use(function(err, req, res, next) {
   });
 });
 
+app.post('/node', require('body-parser').json(), function(req, res){  	
+	var status = req.body.status;
+	var convertedStatus = nodeUtil.convertStatus(status);
+	
+	var isSupportedStatus = nodeUtil.isStatusSupported(convertedStatus);
+	
+	var rtnCode = 200;
+	var isSuccess = true;
+	var rtnMessage = "Well done, mate.";
+	
+	if (true == isSupportedStatus){
+		var newContent = nodeUtil.assembleNewContent(convertedStatus);
+		nodeUtil.writeContentToFile(newContent);
+		
+		rtnMessage = newContent;
+		rtnCode = 200;
+		isSuccess = true;
+	}
+	else {
+		rtnMessage = "unsupported status. status:" + status;
+		rtnCode = 500;
+		isSuccess = false;
+	}
+		
+	res.statusCode = rtnCode;
+    return res.json({success: isSuccess, message: rtnMessage});
+});    
 
 module.exports = app;
