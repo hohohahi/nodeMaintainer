@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
-app.post('/node', require('body-parser').json(), function(req, res){
+router.post('/node', require('body-parser').json(), function(req, res){
   var status = req.body.status;
   var convertedStatus = nodeUtil.convertStatus(status);
 
