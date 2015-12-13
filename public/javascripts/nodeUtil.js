@@ -3,6 +3,7 @@ var prefix = "server="
 var INVALID_STATUS = "invalid status"
 var fs = require('fs');
 
+
 exports.isStatusSupported = function(status){
 	var isSupported = true;
 	if ("enabled" == status || "disabled" == status){
