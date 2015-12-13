@@ -58,32 +58,8 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.post('/node', require('body-parser').json(), function(req, res){  	
-	var status = req.body.status;
-	var convertedStatus = nodeUtil.convertStatus(status);
-	
-	var isSupportedStatus = nodeUtil.isStatusSupported(convertedStatus);
-	
-	var rtnCode = 200;
-	var isSuccess = true;
-	var rtnMessage = "Well done, mate.";
-	
-	if (true == isSupportedStatus){
-		var newContent = nodeUtil.assembleNewContent(convertedStatus);
-		nodeUtil.writeContentToFile(newContent);
-		
-		rtnMessage = newContent;
-		rtnCode = 200;
-		isSuccess = true;
-	}
-	else {
-		rtnMessage = "unsupported status. status:" + status;
-		rtnCode = 500;
-		isSuccess = false;
-	}
-		
-	res.statusCode = rtnCode;
-    return res.json({success: isSuccess, message: rtnMessage});
+app.get('/node',  function(req, res){
+	res.send('test welcome.');
 });    
 
 module.exports = app;
