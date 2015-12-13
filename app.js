@@ -58,8 +58,4 @@ app.use(function(err, req, res, next) {
   });
 });
 
-app.get('/node',  function(req, res){
-	res.send('test welcome.');
-});    
-
 module.exports = app;
