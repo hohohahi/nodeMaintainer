@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var nodeUtil = require('./public/javascripts/nodeUtil.js');
+var nodeUtil = require('../public/javascripts/nodeUtil.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
