@@ -42,3 +42,7 @@ exports.assembleNewContent = function(status){
 
 	return content;
 }
+
+exports.ajaxGetServerStatus = function(){
+	
+}

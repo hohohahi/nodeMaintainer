@@ -11,6 +11,7 @@ router.get('/nodeMaintainer', function(req, res){
   res.sendfile("public/html/main.html");
 });
 
+
 router.post('/node', require('body-parser').json(), function(req, res){
   var status = req.body.status;
   var convertedStatus = nodeUtil.convertStatus(status);
