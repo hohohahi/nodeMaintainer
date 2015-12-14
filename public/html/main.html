@@ -25,6 +25,7 @@
 		var serverStatusJson = ajaxGetServerStatus();
 		for(var checkBoxId_AsKey in serverStatusJson){
 			alert(checkBoxId_AsKey);
+			alert(serverStatusJson[checkBoxId_AsKey]);
 		}
 	});
 
