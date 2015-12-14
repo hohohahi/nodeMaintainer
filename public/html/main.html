@@ -23,8 +23,10 @@
 <script type="text/javascript">
 	jQuery(function($) {
 		var serverStatusJson = ajaxGetServerStatus();
-		alert(JSON.stringify(serverStatusJson));
-	});
+		for(var checkBoxId_AsKey in serverStatusJson){
+			alert(checkBoxId_AsKey);
+		}
+	}
 
 	function doSubmit( ) {
 		alert(123);
