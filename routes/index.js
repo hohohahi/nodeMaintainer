@@ -12,8 +12,10 @@ router.get('/nodeMaintainer', function(req, res){
 });
 
 router.get('/nodeStatus', function(req, res){
+  var content = nodeUtil.getContentFromFile();
+  var status = nodeUtil.convertContentToServerStatus(content)
   res.statusCode = 200;
-  return res.json({success: true, server: 'enabled'});
+  return res.json({success: true, server: 'status'});
 });
 
 router.post('/node', require('body-parser').json(), function(req, res){

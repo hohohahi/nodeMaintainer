@@ -37,6 +37,17 @@ exports.writeContentToFile = function(content){
 	});
 }
 
+exports.getContentFromFile = function(){
+	var contentText = fs.readFileSync(filePath,'utf-8');
+	return contentText;
+}
+
+exports.convertContentToServerStatus = function(content){
+	var length = content.length;
+	var status = content.substr(6, length-6);
+	return status;
+}
+
 exports.assembleNewContent = function(status){
 	content = prefix + status;
 
@@ -44,5 +55,5 @@ exports.assembleNewContent = function(status){
 }
 
 exports.ajaxGetServerStatus = function(){
-	
+
 }
