@@ -47,8 +47,8 @@
       <file leaf-file-name="util.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/util.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5521368">
-              <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+            <state vertical-scroll-proportion="0.75555557">
+              <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -456,7 +456,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450100027349</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="1. jquery ajax">
+      <created>1450100226793</created>
+      <option name="number" value="00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1450100226793</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -617,8 +623,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/util.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5521368">
-          <caret line="19" column="50" selection-start-line="19" selection-start-column="50" selection-end-line="19" selection-end-column="50" />
+        <state vertical-scroll-proportion="0.75555557">
+          <caret line="26" column="38" selection-start-line="26" selection-start-column="38" selection-end-line="26" selection-end-column="38" />
           <folding />
         </state>
       </provider>
