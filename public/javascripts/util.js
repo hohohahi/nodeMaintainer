@@ -23,5 +23,5 @@ function ajaxGetServerStatus(){
 		});
 	}
 
-	JSON.stringify(jsonResult);
+	alert(JSON.stringify(jsonResult));
 }
