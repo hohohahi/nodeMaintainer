@@ -1,8 +1,7 @@
 function ajaxGetServerStatus(){
 	alert(222);
 	$.ajax({
-		data: params,
-		url: 'nodeStatus',
+		url: '/nodeStatus',
 		dataType: 'json',
 		cache: false,
 		timeout: 5000,
