@@ -11,6 +11,10 @@ router.get('/nodeMaintainer', function(req, res){
   res.sendfile("public/html/main.html");
 });
 
+router.get('/nodeStatus', function(req, res){
+  res.statusCode = 200;
+  return res.json({success: true, server: 'enabled'});
+});
 
 router.post('/node', require('body-parser').json(), function(req, res){
   var status = req.body.status;
