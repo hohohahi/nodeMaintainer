@@ -24,8 +24,7 @@
 	jQuery(function($) {
 		var serverStatusJson = ajaxGetServerStatus();
 		for(var checkBoxId_AsKey in serverStatusJson){
-			alert(checkBoxId_AsKey);
-			alert(serverStatusJson[checkBoxId_AsKey]);
+			showCheckBox_ByServerStatus(checkBoxId_AsKey, serverStatusJson[checkBoxId_AsKey]);
 		}
 	});
 

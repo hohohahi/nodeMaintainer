@@ -1,4 +1,7 @@
 var stageUrlList = ["10.0.11.126", '10.0.11.126'];
+var _onStatus = 'enabled';
+var _offStatus = 'disabled';
+
 function ajaxGetServerStatus(){
 	var port = 8406;
 	var protocol = 'http';
@@ -25,4 +28,16 @@ function ajaxGetServerStatus(){
 	}
 
 	return jsonResult;
+}
+
+function showCheckBox_ByServerStatus(key, value){
+	if (value == _onStatus) {
+		$('#'+key).attr("checked", 'true');
+	}
+	else if (value == _offStatus){
+		$('#'+key).attr("checked", 'false');
+	}
+	else{
+		alert('error key/value. key:' + key + '--value:' + value);
+	}
 }
