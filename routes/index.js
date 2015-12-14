@@ -8,7 +8,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/nodeMaintainer', function(req, res){
-  res.sendfile("html/main.html");
+  res.sendfile("public/html/main.html");
 });
 
 router.post('/node', require('body-parser').json(), function(req, res){
