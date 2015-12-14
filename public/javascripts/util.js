@@ -16,12 +16,12 @@ function ajaxGetServerStatus(){
 			timeout: 5000,
 			success: function(data){
 				jsonResult[ipAddress] = data.server;
+
+				alert(JSON.stringify(jsonResult));
 			},
 			error: function(jqXHR, textStatus, errorThrown){
 				alert('error ' + textStatus + " " + errorThrown);
 			}
 		});
 	}
-
-	alert(JSON.stringify(jsonResult));
 }
