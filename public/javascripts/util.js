@@ -16,13 +16,11 @@ function ajaxGetServerStatus(){
 			async:false,
 			timeout: 5000,
 			success: function(data){
-				jsonResult[ipAddress] = data.server.replace(/[\r\n]/g,"");
+				jsonResult[ipAddress.replace(/\./, "_")] = data.server.replace(/[\r\n]/g,"");
 			},
 			error: function(jqXHR, textStatus, errorThrown){
 				alert('error ' + textStatus + " " + errorThrown);
 			}
 		});
 	}
-
-	alert(JSON.stringify(jsonResult));
 }
