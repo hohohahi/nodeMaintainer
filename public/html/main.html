@@ -10,10 +10,10 @@
 	<div id="svList">
 		<label>stage</label>
 		<br/>
-		<input type="checkbox" id="tomcat-126" />
+		<input type="checkbox" id="10_0_11_126" />
 			<label>tomcat-126</label>
 			<br>
-		<input type="checkbox" id="tomcat-127" />
+		<input type="checkbox" id="10_0_11_127" />
 			<label>tomcat-127</label>
 			<br>
 		<input type="button" value="Submit" onclick="doSubmit()">
@@ -22,7 +22,8 @@
 
 <script type="text/javascript">
 	jQuery(function($) {
-		ajaxGetServerStatus();
+		var serverStatusJson = ajaxGetServerStatus();
+		alert(JSON.stringify(serverStatusJson));
 	});
 
 	function doSubmit( ) {
