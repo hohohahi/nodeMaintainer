@@ -41,3 +41,32 @@ function showCheckBox_ByServerStatus(key, value){
 		alert('error key/value. key:' + key + '--value:' + value);
 	}
 }
+
+function convert_Id_Ip(id){
+	id.replace("_", ".");
+}
+
+function getJsonResult_FromCheckBox(){
+	var jsonResult = {};
+	$("input[type='checkbox']").each(function(){
+		var id = $(this).attr("id");
+		var status = '';
+		if($(this).is(':checked') == true)
+		{
+			status = _onStatus;
+		}
+		else
+		{
+			status = _offStatus;
+		}
+
+		var ip = convert_Id_Ip(id);
+		jsonResult[ip] = status;
+	});
+
+	return jsonResult;
+}
+function updateServerStatus_ByCheckBox(){
+	var jsonResult = getJsonResult_FromCheckBox();
+	alert(JSON.stringify(jsonResult));
+}

@@ -29,18 +29,7 @@
 	});
 
 	function doSubmit( ) {
-		$("input[name='checkbox']").each(function(){
-			var id = $(this).attr("id");
-
-			if($(this).attr("checked"))
-			{
-				alert('id:' + id + '--checked');
-			}
-			else
-			{
-				alert('id:' + id + '--unchecked');
-			}
-		});
+		updateServerStatus_ByCheckBox();
 	}
 </script>
 </html>
