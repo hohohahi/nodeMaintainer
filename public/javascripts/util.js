@@ -43,7 +43,8 @@ function showCheckBox_ByServerStatus(key, value){
 }
 
 function convert_Id_Ip(id){
-	id.replace("_", ".");
+	var ip = id.replace(/_/g, ".");
+	return ip;
 }
 
 function getJsonResult_FromCheckBox(){
