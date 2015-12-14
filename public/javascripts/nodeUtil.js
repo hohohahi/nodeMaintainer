@@ -44,7 +44,7 @@ exports.getContentFromFile = function(){
 
 exports.convertContentToServerStatus = function(content){
 	var length = content.length;
-	var status = content.substr(6, length-6);
+	var status = content.substr(7, length-7);
 	return status;
 }
 

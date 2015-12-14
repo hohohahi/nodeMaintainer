@@ -1,5 +1,4 @@
 function ajaxGetServerStatus(){
-	alert(222);
 	$.ajax({
 		url: '/nodeStatus',
 		dataType: 'json',
@@ -12,6 +11,4 @@ function ajaxGetServerStatus(){
 			alert('error ' + textStatus + " " + errorThrown);
 		}
 	});
-
-	alert(111);
 }
