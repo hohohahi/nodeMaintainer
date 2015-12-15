@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="927364c7-d5c8-4311-b6a2-808eaadaf29a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/util.js" afterPath="$PROJECT_DIR$/public/javascripts/util.js" />
     </list>
     <ignored path="nodeMaintainer.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -322,12 +321,6 @@
       <option name="number" value="Default" />
       <updated>1449932526902</updated>
     </task>
-    <task id="LOCAL-00035" summary="1. async ajax">
-      <created>1450104401568</created>
-      <option name="number" value="00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1450104401568</updated>
-    </task>
     <task id="LOCAL-00036" summary="1. async ajax">
       <created>1450109427727</created>
       <option name="number" value="00036" />
@@ -616,7 +609,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450179306769</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="1. async ajax">
+      <created>1450179479374</created>
+      <option name="number" value="00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1450179479375</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="ToolWindowManager">
