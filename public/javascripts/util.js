@@ -26,12 +26,12 @@ function ajaxGetServerStatus(){
 			}
 		});
 	}
+    alert(JSON.stringify(jsonResult));
 
 	return jsonResult;
 }
 
 function showCheckBox_ByServerStatus(key, value){
-    alert(key + ':' + value);
 	if (value == _onStatus) {
 		$('#'+key).attr("checked", 'true');
 	}
