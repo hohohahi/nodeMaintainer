@@ -13,6 +13,7 @@ function ajaxGetServerStatus(){
 		$.jsonp({
 			type: 'GET',
 			url: fullURL,
+			dataType: 'jsonp',
             callback: 'callback',
 			cache: false,
 			async:false,

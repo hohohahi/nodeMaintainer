@@ -15,7 +15,8 @@ router.get('/node', function(req, res){
   var content = nodeUtil.getContentFromFile();
   var status = nodeUtil.convertContentToServerStatus(content)
   res.statusCode = 200;
-  return res.json({server: status});
+  res.write('callback(' + JSON.stringify('{server: status}') + ')');
+  res.end();
 });
 
 router.post('/node', require('body-parser').json(), function(req, res){
