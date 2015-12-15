@@ -47,8 +47,8 @@
       <file leaf-file-name="util.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/util.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42045453">
-              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+            <state vertical-scroll-proportion="0.71875">
+              <caret line="97" column="20" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
               <folding />
             </state>
           </provider>
@@ -321,12 +321,6 @@
       <created>1449932526902</created>
       <option name="number" value="Default" />
       <updated>1449932526902</updated>
-    </task>
-    <task id="LOCAL-00017" summary="1. add jquery">
-      <created>1450078572894</created>
-      <option name="number" value="00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1450078572894</updated>
     </task>
     <task id="LOCAL-00018" summary="1. jquery ajax">
       <created>1450082080650</created>
@@ -616,7 +610,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450174328007</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="1. async ajax">
+      <created>1450174345333</created>
+      <option name="number" value="00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1450174345333</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -802,8 +802,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/util.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.42045453">
-          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
+        <state vertical-scroll-proportion="0.71875">
+          <caret line="97" column="20" selection-start-line="97" selection-start-column="20" selection-end-line="97" selection-end-column="20" />
           <folding />
         </state>
       </provider>
