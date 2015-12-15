@@ -23,10 +23,6 @@ function ajaxGetServerStatus(){
                 var serverStatus = data.server;
                 var value = serverStatus.replace(/[\r\n]/g,"");
 
-                alert(key);
-                alert(value);
-                alert(serverStatus);
-
 				jsonResult[key] = value;
 
                 alert(JSON.stringify(jsonResult));
