@@ -24,7 +24,7 @@ router.get('/node', function(req, res){
   //return res.json({server: status});
 });
 
-router.post('/node', require('body-parser').json(), function(req, res){
+router.post('/node', function(req, res){
   var status = req.body.status;
   var isSupportedStatus = nodeUtil.isStatusSupported(status);
 
