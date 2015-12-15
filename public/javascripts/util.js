@@ -46,6 +46,7 @@ function jsonpCallback(){
 }
 
 function update(serverStatusJson){
+    alert(JSON.stringify(serverStatusJson));
     for(var checkBoxId_AsKey in serverStatusJson){
         showCheckBox_ByServerStatus(checkBoxId_AsKey, serverStatusJson[checkBoxId_AsKey]);
     }
