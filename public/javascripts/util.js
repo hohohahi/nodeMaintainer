@@ -5,10 +5,6 @@ function assembleFullURL(ipAddress, path){
 }
 
 function ajaxGetServerStatus(){
-	var port = 8406;
-	var protocol = 'http';
-	var path = 'nodeStatus';
-
 	var jsonResult = {};
 	for (var i=0;i<stageUrlList.length;i++) {
 		var ipAddress = stageUrlList[i];
@@ -73,7 +69,6 @@ function getJsonResult_FromCheckBox(){
 
 function updateServerStatus_ByCheckBox(){
 	var jsonResult = getJsonResult_FromCheckBox();
-	alert(JSON.stringify(jsonResult));
 
 	for(var ipAsKey in jsonResult){
 		var serverStatus = jsonResult[ipAsKey];
