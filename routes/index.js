@@ -19,7 +19,7 @@ router.get('/node', function(req, res){
 
   res.statusCode = 200;
   //res.write('callback' + '(' + JSON.stringify(jsonResult) + ')');
-  res.write('callback' + '(' + JSON.stringify(jsonResult) + ')');
+  res.write(JSON.stringify(jsonResult));
   res.end();
   //return res.json({server: status});
 });
