@@ -4,9 +4,12 @@ function assembleFullURL(ipAddress, path){
 	return fullURL;
 }
 
-function ajaxGetServerStatus(){
+function ajaxGetServerStatusAndUpdate(){
 	var jsonResult = {};
-	for (var i=0;i<stageUrlList.length;i++) {
+    var messageCount = 0;
+    var urlListSize = stageUrlList.length;
+
+    for (var i=0;i<urlListSize;i++) {
 		var ipAddress = stageUrlList[i];
 		var fullURL = assembleFullURL(ipAddress, _node);
 
@@ -20,24 +23,32 @@ function ajaxGetServerStatus(){
             async:false,
 			timeout: 5000,
 			success: function(data){
+                messageCount++;
                 var key = ipAddress.replace(/\./g, "_");
                 var serverStatus = data.server;
                 var value = serverStatus.replace(/[\r\n]/g,"");
 
 				jsonResult[key] = value;
+
+                if (messageCount == urlListSize){
+                    update(jsonResult);
+                }
 			},
 			error: function(jqXHR, textStatus, errorThrown){
 				alert('error ' + textStatus + " " + errorThrown);
 			}
 		});
 	}
-
-    alert(JSON.stringify(jsonResult));
-	return jsonResult;
 }
 
 function jsonpCallback(){
 
+}
+
+function update(serverStatusJson){
+    for(var checkBoxId_AsKey in serverStatusJson){
+        showCheckBox_ByServerStatus(checkBoxId_AsKey, serverStatusJson[checkBoxId_AsKey]);
+    }
 }
 function showCheckBox_ByServerStatus(key, value){
 	if (value == _onStatus) {

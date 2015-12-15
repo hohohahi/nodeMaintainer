@@ -28,10 +28,7 @@
 	});
 
 	function doShow(){
-		var serverStatusJson = ajaxGetServerStatus();
-		for(var checkBoxId_AsKey in serverStatusJson){
-			showCheckBox_ByServerStatus(checkBoxId_AsKey, serverStatusJson[checkBoxId_AsKey]);
-		}
+		ajaxGetServerStatusAndUpdate();
 	}
 
 	function doSubmit( ) {
