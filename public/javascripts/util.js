@@ -15,6 +15,7 @@ function ajaxGetServerStatus(){
 			url: fullURL,
 			dataType: 'jsonp',
             jsonp: 'callback',
+            jsonpCallback: 'jsonpCallback',
 			cache: false,
             async:false,
 			timeout: 5000,
@@ -35,6 +36,9 @@ function ajaxGetServerStatus(){
 	return jsonResult;
 }
 
+function jsonpCallback(){
+
+}
 function showCheckBox_ByServerStatus(key, value){
 	if (value == _onStatus) {
 		$('#'+key).attr("checked", 'true');
