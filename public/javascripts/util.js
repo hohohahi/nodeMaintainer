@@ -52,11 +52,9 @@ function update(serverStatusJson){
 }
 function showCheckBox_ByServerStatus(key, value){
 	if (value == _onStatus) {
-        alert('key:' + key + '--value:' + value + '--on');
 		$('#'+key).attr("checked", true);
 	}
 	else if (value == _offStatus){
-        alert('key:' + key + '--value:' + value + '--off');
         $('#'+key).attr("checked", false);
 	}
 	else{
