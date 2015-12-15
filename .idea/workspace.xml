@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="927364c7-d5c8-4311-b6a2-808eaadaf29a" name="Default" comment="1. async ajax">
+    <list default="true" id="927364c7-d5c8-4311-b6a2-808eaadaf29a" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/util.js" afterPath="$PROJECT_DIR$/public/javascripts/util.js" />
     </list>
@@ -47,8 +47,8 @@
       <file leaf-file-name="util.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/util.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.19451371">
-              <caret line="92" column="4" selection-start-line="92" selection-start-column="4" selection-end-line="92" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.7032419">
+              <caret line="110" column="28" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -311,12 +311,6 @@
       <created>1449932526902</created>
       <option name="number" value="Default" />
       <updated>1449932526902</updated>
-    </task>
-    <task id="LOCAL-00042" summary="1. async ajax">
-      <created>1450112796683</created>
-      <option name="number" value="00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1450112796683</updated>
     </task>
     <task id="LOCAL-00043" summary="1. async ajax">
       <created>1450113177171</created>
@@ -606,7 +600,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450182451158</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="1. async ajax">
+      <created>1450182624849</created>
+      <option name="number" value="00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1450182624849</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -792,8 +792,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/util.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.19451371">
-          <caret line="92" column="4" selection-start-line="92" selection-start-column="4" selection-end-line="92" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.7032419">
+          <caret line="110" column="28" selection-start-line="110" selection-start-column="28" selection-end-line="110" selection-end-column="28" />
           <folding />
         </state>
       </provider>

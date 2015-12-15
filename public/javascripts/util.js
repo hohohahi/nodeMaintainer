@@ -99,7 +99,7 @@ function updateServerStatus_ByCheckBox(){
 
         $.ajax({
             type: 'POST',
-            url: fullURL,
+            url: fullURL + '?time=' + new Date().getTime(),
             dataType: 'jsonp',
             jsonp: 'callback',
             jsonpCallback: 'jsonpCallback',
@@ -108,7 +108,7 @@ function updateServerStatus_ByCheckBox(){
             async:true,
             timeout: 5000,
             success: function(data){
-
+                alert(data);
             },
             error: function(jqXHR, textStatus, errorThrown){
                 alert('error ' + textStatus + " " + errorThrown);
