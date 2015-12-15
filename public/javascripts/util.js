@@ -15,7 +15,7 @@ function ajaxGetServerStatus(){
 			url: fullURL,
 			dataType: 'jsonp',
             jsonp: 'callback',
-            jsonpCallback: '?'
+            jsonpCallback: '?',
 			cache: false,
 			async:false,
 			timeout: 5000,
