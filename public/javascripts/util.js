@@ -20,7 +20,6 @@ function ajaxGetServerStatus(){
             async:false,
 			timeout: 5000,
 			success: function(data){
-                alert(data);
                 var key = ipAddress.replace(/\./g, "_");
                 var serverStatus = data.server;
                 var value = serverStatus.replace(/[\r\n]/g,"");
