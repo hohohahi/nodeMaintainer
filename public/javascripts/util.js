@@ -13,7 +13,7 @@ function ajaxGetServerStatus(){
 		$.ajax({
 			type: 'GET',
 			url: fullURL,
-			dataType: 'json',
+			dataType: 'jsonp',
 			cache: false,
 			async:false,
 			timeout: 5000,
@@ -85,7 +85,7 @@ function updateServerStatus_ByCheckBox(){
 		$.ajax({
 			type: 'POST',
 			url: fullURL,
-			dataType: 'json',
+			dataType: 'jsonp',
 			data: jsonInputData,
 			cache: false,
 			async:false,
