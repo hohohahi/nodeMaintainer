@@ -24,15 +24,12 @@ function ajaxGetServerStatus(){
                 var value = serverStatus.replace(/[\r\n]/g,"");
 
 				jsonResult[key] = value;
-
-                alert(JSON.stringify(jsonResult));
 			},
 			error: function(jqXHR, textStatus, errorThrown){
 				alert('error ' + textStatus + " " + errorThrown);
 			}
 		});
 	}
-    alert(JSON.stringify(jsonResult));
 
 	return jsonResult;
 }
