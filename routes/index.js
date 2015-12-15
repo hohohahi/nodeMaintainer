@@ -13,9 +13,11 @@ router.get('/nodeMaintainer', function(req, res){
 
 router.get('/node', function(req, res){
   var content = nodeUtil.getContentFromFile();
-  var status = nodeUtil.convertContentToServerStatus(content)
+  var status = nodeUtil.convertContentToServerStatus(content);
+  var jsonResult = '';
+  jsonResult['server'] = status;
   res.statusCode = 200;
-  res.write('callback(' + JSON.stringify('{server: status}') + ')');
+  res.write('callback(' + JSON.stringify(jsonResult) + ')');
   res.end();
 });
 
