@@ -27,7 +27,7 @@ router.post('/node', require('body-parser').json(), function(req, res){
   var rtnMessage = "Well done, mate.";
 
   if (true == isSupportedStatus){
-    var newContent = nodeUtil.assembleNewContent(convertedStatus);
+    var newContent = nodeUtil.assembleNewContent(status);
     nodeUtil.writeContentToFile(newContent);
 
     rtnMessage = newContent;
