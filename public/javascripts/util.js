@@ -10,7 +10,7 @@ function ajaxGetServerStatus(){
 		var ipAddress = stageUrlList[i];
 		var fullURL = assembleFullURL(ipAddress, _node);
 
-		$.ajax({
+		$.jsonp({
 			type: 'GET',
 			url: fullURL,
 			dataType: 'jsonp',
@@ -94,7 +94,7 @@ function updateServerStatus_ByCheckBox(){
 			continue;
 		}
 
-		$.ajax({
+		$.jsonp({
 			type: 'POST',
 			url: fullURL,
 			dataType: 'jsonp',
