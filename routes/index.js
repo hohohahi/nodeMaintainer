@@ -19,7 +19,7 @@ router.get('/node', function(req, res){
 
   res.statusCode = 200;
   //res.write(JSON.stringify(jsonResult));
-  res.jsonp(jsonResult);
+  res.json({server:status});
 });
 
 router.post('/node', require('body-parser').json(), function(req, res){
