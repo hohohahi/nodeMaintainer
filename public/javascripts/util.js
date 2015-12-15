@@ -10,14 +10,13 @@ function ajaxGetServerStatus(){
 		var ipAddress = stageUrlList[i];
 		var fullURL = assembleFullURL(ipAddress, _node);
 
-		$.ajax({
+		$.jsonp({
 			type: 'GET',
 			url: fullURL,
 			dataType: 'jsonp',
             jsonp: 'callback',
-            jsonpCallback: '?',
 			cache: false,
-			async:false,
+            async:false,
 			timeout: 5000,
 			success: function(data){
                 var key = ipAddress.replace(/\./g, "_");
