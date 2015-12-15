@@ -11,7 +11,7 @@ router.get('/nodeMaintainer', function(req, res){
   res.sendfile("public/html/main.html");
 });
 
-router.get('/nodeStatus', function(req, res){
+router.get('/node', function(req, res){
   var content = nodeUtil.getContentFromFile();
   var status = nodeUtil.convertContentToServerStatus(content)
   res.statusCode = 200;

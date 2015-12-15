@@ -1,6 +1,8 @@
-var stageUrlList = ["10.0.11.126", '10.0.11.126'];
-var _onStatus = 'enabled';
-var _offStatus = 'disabled';
+function assembleFullURL(ipAddress, path){
+	var fullURL = _protocol + '://' + ipAddress + ':' + _port + '/' + path;
+
+	return fullURL;
+}
 
 function ajaxGetServerStatus(){
 	var port = 8406;
@@ -10,10 +12,11 @@ function ajaxGetServerStatus(){
 	var jsonResult = {};
 	for (var i=0;i<stageUrlList.length;i++) {
 		var ipAddress = stageUrlList[i];
-		var fullUrl = protocol + '://' + ipAddress + ':' + port + '/' + path;
+		var fullURL = assembleFullURL(ipAddress, _node);
 
 		$.ajax({
-			url: fullUrl,
+			type: 'GET',
+			url: fullURL,
 			dataType: 'json',
 			cache: false,
 			async:false,
@@ -67,7 +70,37 @@ function getJsonResult_FromCheckBox(){
 
 	return jsonResult;
 }
+
 function updateServerStatus_ByCheckBox(){
 	var jsonResult = getJsonResult_FromCheckBox();
 	alert(JSON.stringify(jsonResult));
+
+	for(var ipAsKey in jsonResult){
+		var serverStatus = jsonResult[ipAsKey];
+		var fullURL = assembleFullURL(ipAsKey, _node);
+		var jsonResult = {};
+		var jsonInputData = {};
+		jsonInputData[_serverStatus] = serverStatus;
+
+		if ('10.0.11.127' == ipAsKey){
+			alert('ip:' + ipAsKey + '. continue');
+			continue;
+		}
+
+		$.ajax({
+			type: 'POST',
+			url: fullURL,
+			dataType: 'json',
+			data: jsonInputData,
+			cache: false,
+			async:false,
+			timeout: 5000,
+			success: function(data){
+				alert (JSON.stringify(data));
+			},
+			error: function(jqXHR, textStatus, errorThrown){
+				alert('error ' + textStatus + " " + errorThrown);
+			}
+		});
+	}
 }

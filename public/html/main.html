@@ -4,6 +4,7 @@
 	<meta content="text/html; charset=UTF-8" http-equiv="Content-Type">
 	<title>Change LB(F5) settings</title>
 	<script type="text/javascript" src="../javascripts/jquery-2.1.4.js"></script>
+	<script type="text/javascript" src="../javascripts/constants.js"></script>
 	<script type="text/javascript" src="../javascripts/util.js"></script>
 </head>
 <body>
@@ -22,11 +23,15 @@
 
 <script type="text/javascript">
 	jQuery(function($) {
+		doShow();
+	});
+
+	function doShow(){
 		var serverStatusJson = ajaxGetServerStatus();
 		for(var checkBoxId_AsKey in serverStatusJson){
 			showCheckBox_ByServerStatus(checkBoxId_AsKey, serverStatusJson[checkBoxId_AsKey]);
 		}
-	});
+	}
 
 	function doSubmit( ) {
 		updateServerStatus_ByCheckBox();
