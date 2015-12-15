@@ -19,6 +19,7 @@ function ajaxGetServerStatus(){
 			async:false,
 			timeout: 5000,
 			success: function(data){
+                alert(JSON.stringify(data));
 				jsonResult[ipAddress.replace(/\./g, "_")] = data.server.replace(/[\r\n]/g,"");
 			},
 			error: function(jqXHR, textStatus, errorThrown){
