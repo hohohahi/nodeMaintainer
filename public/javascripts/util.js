@@ -10,11 +10,11 @@ function ajaxGetServerStatus(){
 		var ipAddress = stageUrlList[i];
 		var fullURL = assembleFullURL(ipAddress, _node);
 
-		$.jsonp({
+		$.ajax({
 			type: 'GET',
 			url: fullURL,
-			dataType: 'json',
-            callback: 'callback',
+			dataType: 'jsonp',
+            jsonp: 'callback',
 			cache: false,
 			async:false,
 			timeout: 5000,
@@ -94,12 +94,12 @@ function updateServerStatus_ByCheckBox(){
 			continue;
 		}
 
-		$.jsonp({
+		$.ajax({
 			type: 'POST',
 			url: fullURL,
-			dataType: 'json',
+			dataType: 'jsonp',
 			data: jsonInputData,
-            callbackParameter: "callback",
+            jsonp: "callback",
 			cache: false,
 			async:false,
 			timeout: 5000,
