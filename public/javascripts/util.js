@@ -91,7 +91,7 @@ function updateServerStatus_ByCheckBox(){
 			async:false,
 			timeout: 5000,
 			success: function(data){
-				alert (JSON.stringify(data));
+
 			},
 			error: function(jqXHR, textStatus, errorThrown){
 				alert('error ' + textStatus + " " + errorThrown);
