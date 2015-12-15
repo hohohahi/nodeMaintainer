@@ -46,17 +46,18 @@ function jsonpCallback(){
 }
 
 function update(serverStatusJson){
-    alert(JSON.stringify(serverStatusJson));
     for(var checkBoxId_AsKey in serverStatusJson){
         showCheckBox_ByServerStatus(checkBoxId_AsKey, serverStatusJson[checkBoxId_AsKey]);
     }
 }
 function showCheckBox_ByServerStatus(key, value){
 	if (value == _onStatus) {
+        alert('key:' + key + '--value:' + value + '--on');
 		$('#'+key).attr("checked", 'true');
 	}
 	else if (value == _offStatus){
-		$('#'+key).attr("checked", 'false');
+        alert('key:' + key + '--value:' + value + '--off');
+        $('#'+key).attr("checked", 'false');
 	}
 	else{
 		alert('error key/value. key:' + key + '--value:' + value);
