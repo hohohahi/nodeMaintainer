@@ -20,9 +20,7 @@ router.get('/node', function(req, res){
 
 router.post('/node', require('body-parser').json(), function(req, res){
   var status = req.body.status;
-  var convertedStatus = nodeUtil.convertStatus(status);
-
-  var isSupportedStatus = nodeUtil.isStatusSupported(convertedStatus);
+  var isSupportedStatus = nodeUtil.isStatusSupported(status);
 
   var rtnCode = 200;
   var isSuccess = true;
