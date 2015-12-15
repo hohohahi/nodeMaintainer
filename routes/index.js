@@ -15,7 +15,7 @@ router.get('/node', function(req, res){
   var content = nodeUtil.getContentFromFile();
   var status = nodeUtil.convertContentToServerStatus(content)
   res.statusCode = 200;
-  return res.json({success: true, server: status});
+  return res.json({server: status});
 });
 
 router.post('/node', require('body-parser').json(), function(req, res){
@@ -23,7 +23,6 @@ router.post('/node', require('body-parser').json(), function(req, res){
   var isSupportedStatus = nodeUtil.isStatusSupported(status);
 
   var rtnCode = 200;
-  var isSuccess = true;
   var rtnMessage = "Well done, mate.";
 
   if (true == isSupportedStatus){
@@ -32,16 +31,14 @@ router.post('/node', require('body-parser').json(), function(req, res){
 
     rtnMessage = newContent;
     rtnCode = 200;
-    isSuccess = true;
   }
   else {
     rtnMessage = "unsupported status. status:" + status;
     rtnCode = 500;
-    isSuccess = false;
   }
 
   res.statusCode = rtnCode;
-  return res.json({success: isSuccess, message: rtnMessage});
+  return res.json({rtnCode: rtnCode, message: rtnMessage});
 });
 
 module.exports = router;
