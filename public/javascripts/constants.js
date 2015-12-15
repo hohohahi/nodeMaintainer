@@ -4,4 +4,5 @@ var _offStatus = 'disabled';
 var _port = 8406;
 var _protocol = 'http';
 var _node = 'node';
+var _nodes = 'nodes';
 var _serverStatus = 'status';

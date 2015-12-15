@@ -90,29 +90,20 @@ function getJsonResult_FromCheckBox(){
 
 function updateServerStatus_ByCheckBox(){
 	var jsonResult = getJsonResult_FromCheckBox();
-
-	for(var ipAsKey in jsonResult){
-		var serverStatus = jsonResult[ipAsKey];
-		var fullURL = assembleFullURL(ipAsKey, _node);
-		var jsonInputData = {};
-		jsonInputData[_serverStatus] = serverStatus;
-
-        $.ajax({
-            type: 'POST',
-            url: fullURL + '?time=' + new Date().getTime(),
-            dataType: 'jsonp',
-            jsonp: 'callback',
-            jsonpCallback: 'jsonpCallback',
-            data: jsonInputData,
-            cache: false,
-            async:true,
-            timeout: 5000,
-            success: function(data){
-                alert(data);
-            },
-            error: function(jqXHR, textStatus, errorThrown){
-                alert('error ' + textStatus + " " + errorThrown);
-            }
-        });
-	}
+    var fullURL = assembleFullURL(ipAsKey, _node);
+    $.ajax({
+        type: 'POST',
+        url: _nodes + '?time=' + new Date().getTime(),
+        dataType: 'json',
+        data: jsonResult,
+        cache: false,
+        async:false,
+        timeout: 5000,
+        success: function(data){
+            alert(data);
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            alert('error ' + textStatus + " " + errorThrown);
+        }
+    });
 }

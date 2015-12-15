@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var nodeUtil = require('../public/javascripts/nodeUtil.js');
+var _constants = require('../public/javascripts/constants.js');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -11,6 +12,21 @@ router.get('/nodeMaintainer', function(req, res){
   res.sendfile("public/html/main.html");
 });
 
+router.get('/nodes', function(req, res){
+  var urlListSize = stageUrlList.length;
+  var joinCount = 0;
+  var jsonResult = {};
+  for (var i=0;i<urlListSize;i++) {
+    var ip = stageUrlList[i];
+    var req = httpsync.get({ url : "http://" + ip + ':' + _port + '/' + _node + '?time=' + new Date().getTime()});
+    var res = req.end();
+
+    jsonResult[ip] = res.server;
+  }
+
+  alert(JSON.stringify(jsonResult));
+});
+
 router.get('/node', function(req, res){
   var content = nodeUtil.getContentFromFile();
   var status = nodeUtil.convertContentToServerStatus(content);
@@ -19,9 +35,14 @@ router.get('/node', function(req, res){
 
   res.statusCode = 200;
   //res.write('callback' + '(' + JSON.stringify(jsonResult) + ')');
-  res.write('jsonpCallback' + '(' + JSON.stringify(jsonResult) + ')');
-  res.end();
-  //return res.json({server: status});
+  //res.write('jsonpCallback' + '(' + JSON.stringify(jsonResult) + ')');
+  //res.end();
+  return res.json({server: status});
+});
+
+router.post('/nodes', require('body-parser').json(), function(req, res){
+  var jsonResult = req.body.data;
+  console.log(JSON.stringify(jsonResult));
 });
 
 router.post('/node', function(req, res){
