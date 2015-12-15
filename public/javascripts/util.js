@@ -94,30 +94,25 @@ function updateServerStatus_ByCheckBox(){
 	for(var ipAsKey in jsonResult){
 		var serverStatus = jsonResult[ipAsKey];
 		var fullURL = assembleFullURL(ipAsKey, _node);
-		var jsonResult = {};
 		var jsonInputData = {};
 		jsonInputData[_serverStatus] = serverStatus;
 
-		if ('10.0.11.127' == ipAsKey){
-			alert('ip:' + ipAsKey + '. continue');
-			continue;
-		}
+        $.ajax({
+            type: 'POST',
+            url: fullURL,
+            dataType: 'jsonp',
+            jsonp: 'callback',
+            jsonpCallback: 'jsonpCallback',
+            data: jsonInputData,
+            cache: false,
+            async:false,
+            timeout: 5000,
+            success: function(data){
 
-		$.jsonp({
-			type: 'POST',
-			url: fullURL,
-			dataType: 'jsonp',
-			data: jsonInputData,
-            callback: "callback",
-			cache: false,
-			async:false,
-			timeout: 5000,
-			success: function(data){
-
-			},
-			error: function(jqXHR, textStatus, errorThrown){
-				alert('error ' + textStatus + " " + errorThrown);
-			}
-		});
+            },
+            error: function(jqXHR, textStatus, errorThrown){
+                alert('error ' + textStatus + " " + errorThrown);
+            }
+        });
 	}
 }

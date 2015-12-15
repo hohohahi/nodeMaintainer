@@ -30,6 +30,7 @@ router.post('/node', require('body-parser').json(), function(req, res){
 
   var rtnCode = 200;
   var rtnMessage = "Well done, mate.";
+  var jsonResult = {};
 
   if (true == isSupportedStatus){
     var newContent = nodeUtil.assembleNewContent(status);
@@ -44,7 +45,13 @@ router.post('/node', require('body-parser').json(), function(req, res){
   }
 
   res.statusCode = rtnCode;
-  return res.json({rtnCode: rtnCode, message: rtnMessage});
+  jsonResult[rtnCode] = rtnCode;
+  jsonResult[rtnMessage] = rtnMessage;
+
+  res.write('jsonpCallback' + '(' + JSON.stringify(jsonResult) + ')');
+  res.end();
+
+  //return res.json({rtnCode: rtnCode, message: rtnMessage});
 });
 
 module.exports = router;
