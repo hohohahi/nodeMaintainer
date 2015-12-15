@@ -32,6 +32,7 @@ function ajaxGetServerStatus(){
 		});
 	}
 
+    alert(JSON.stringify(jsonResult));
 	return jsonResult;
 }
 
