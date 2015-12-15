@@ -18,8 +18,9 @@ router.get('/node', function(req, res){
   jsonResult['server'] = status;
 
   res.statusCode = 200;
-  res.write('callback' + '(' + JSON.stringify(jsonResult) + ')');
-  res.end();
+  //res.write('callback' + '(' + JSON.stringify(jsonResult) + ')');
+  //res.write('callback' + '(' + JSON.stringify(jsonResult) + ')');
+  return res.json({server: status});
 });
 
 router.post('/node', require('body-parser').json(), function(req, res){
