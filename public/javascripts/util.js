@@ -91,6 +91,7 @@ function getJsonResult_FromCheckBox(){
 function updateServerStatus_ByCheckBox(){
 	var jsonResult = getJsonResult_FromCheckBox();
 
+    alert(JSON.stringify(jsonResult));
 	for(var ipAsKey in jsonResult){
 		var serverStatus = jsonResult[ipAsKey];
 		var fullURL = assembleFullURL(ipAsKey, _node);
