@@ -34,8 +34,8 @@ router.get('/nodes', function(req, res){
     //var req = httpsync.get({ url : url});
     //var res = req.end();
 
-    var req = httpsync.get({ url : "http://cnodejs.org"});
-    var res = req.end();
+    var req_temp = httpsync.get({ url : "http://cnodejs.org"});
+    var res_temp = req.end();
     console.log(res);
 
     jsonResult[ip] = '';
