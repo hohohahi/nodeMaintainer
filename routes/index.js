@@ -41,6 +41,7 @@ router.get('/nodes', function(req, res){
 });
 
 router.get('/node', function(req, res){
+  console.log("get node in.");
   var content = nodeUtil.getContentFromFile();
   var status = nodeUtil.convertContentToServerStatus(content);
   var jsonResult = {};
