@@ -11,8 +11,9 @@ function ajaxGetServerStatusAndUpdate(){
         cache: false,
         timeout: 5000,
         success: function(data){
-            alert(JSON.stringify(data));
-            update(data);
+            alert(data);
+            //alert(JSON.stringify(data));
+            //update(data);
         },
         error: function(jqXHR, textStatus, errorThrown){
             alert('error ' + textStatus + " " + errorThrown);
