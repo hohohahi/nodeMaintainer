@@ -1,7 +1,6 @@
 var express = require('express');
 var path = require('path');
 var http = require('http');
-var httpsync = require('httpsync');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');

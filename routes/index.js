@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var nodeUtil = require('../public/javascripts/nodeUtil.js');
 
+var httpsync = require('httpsync');
 var stageUrlList = ["10.0.11.126", '10.0.11.127'];
 var _onStatus = 'enabled';
 var _offStatus = 'disabled';
