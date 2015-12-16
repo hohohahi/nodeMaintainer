@@ -27,7 +27,11 @@ router.get('/nodes', function(req, res){
   var jsonResult = {};
   for (var i=0;i<urlListSize;i++) {
     var ip = stageUrlList[i];
-    var req = httpsync.get({ url : "http://" + ip + ':' + _port + '/' + _node + '?time=' + new Date().getTime()});
+    var url = "http://" + ip + ':' + _port + '/' + _node + '?time=' + new Date().getTime();
+
+    console.log('ip:' + ip + '--url:' + url);
+
+    var req = httpsync.get({ url : url});
     var res = req.end();
 
     jsonResult[ip] = res.server;
