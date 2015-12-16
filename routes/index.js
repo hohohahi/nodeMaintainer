@@ -41,8 +41,6 @@ router.get('/nodes', function(req, res){
     jsonResult[ip] = '';
   }
 
-  console.log(JSON.stringify(jsonResult));
-
   res.send('abc');
 });
 
