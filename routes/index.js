@@ -42,6 +42,8 @@ router.get('/nodes', function(req, res){
   }
 
   console.log(JSON.stringify(jsonResult));
+
+  res.send('abc');
 });
 
 router.get('/node', function(req, res){

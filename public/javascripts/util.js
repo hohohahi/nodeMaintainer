@@ -9,7 +9,6 @@ function ajaxGetServerStatusAndUpdate(){
         type: 'GET',
         url: _nodes,
         cache: false,
-        async:true,
         timeout: 5000,
         success: function(data){
             alert(JSON.stringify(data));
@@ -19,10 +18,6 @@ function ajaxGetServerStatusAndUpdate(){
             alert('error ' + textStatus + " " + errorThrown);
         }
     });
-}
-
-function jsonpCallback(){
-
 }
 
 function update(serverStatusJson){
