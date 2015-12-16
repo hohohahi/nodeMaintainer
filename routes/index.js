@@ -36,12 +36,13 @@ router.get('/nodes', function(req, res){
 
     var req_temp = httpsync.get({ url : "http://cnodejs.org"});
     var res_temp = req_temp.end();
-    console.log(res);
 
     jsonResult[ip] = '';
   }
 
+  console.log('send in');
   res.send('abc');
+  console.log('send out');
 });
 
 router.get('/node', function(req, res){
