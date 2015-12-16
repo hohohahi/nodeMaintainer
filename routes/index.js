@@ -23,7 +23,7 @@ router.get('/nodes', function(req, res){
     jsonResult[ip] = res.server;
   }
 
-  alert(JSON.stringify(jsonResult));
+  console.log(JSON.stringify(jsonResult));
 });
 
 router.get('/node', function(req, res){

@@ -5,40 +5,20 @@ function assembleFullURL(ipAddress, path){
 }
 
 function ajaxGetServerStatusAndUpdate(){
-	var jsonResult = {};
-    var messageCount = 0;
-    var urlListSize = stageUrlList.length;
-
-    for (var i=0;i<urlListSize;i++) {
-		var ipAddress = stageUrlList[i];
-		var fullURL = assembleFullURL(ipAddress, _node);
-
-		$.ajax({
-			type: 'GET',
-			url: fullURL,
-			dataType: 'jsonp',
-            jsonp: 'callback',
-            jsonpCallback: 'jsonpCallback',
-			cache: false,
-            async:false,
-			timeout: 5000,
-			success: function(data){
-                messageCount++;
-                var key = ipAddress.replace(/\./g, "_");
-                var serverStatus = data.server;
-                var value = serverStatus.replace(/[\r\n]/g,"");
-
-				jsonResult[key] = value;
-
-                if (messageCount == urlListSize){
-                    update(jsonResult);
-                }
-			},
-			error: function(jqXHR, textStatus, errorThrown){
-				alert('error ' + textStatus + " " + errorThrown);
-			}
-		});
-	}
+    $.ajax({
+        type: 'GET',
+        url: _nodes,
+        cache: false,
+        async:true,
+        timeout: 5000,
+        success: function(data){
+            alert(JSON.stringify(data));
+            update(data);
+        },
+        error: function(jqXHR, textStatus, errorThrown){
+            alert('error ' + textStatus + " " + errorThrown);
+        }
+    });
 }
 
 function jsonpCallback(){
