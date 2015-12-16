@@ -322,12 +322,6 @@
       <option name="number" value="Default" />
       <updated>1449932526902</updated>
     </task>
-    <task id="LOCAL-00059" summary="1. async ajax">
-      <created>1450171626415</created>
-      <option name="number" value="00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1450171626415</updated>
-    </task>
     <task id="LOCAL-00060" summary="1. async ajax">
       <created>1450172388918</created>
       <option name="number" value="00060" />
@@ -616,7 +610,13 @@
       <option name="project" value="LOCAL" />
       <updated>1450285749631</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="1. async ajax">
+      <created>1450285877396</created>
+      <option name="number" value="00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1450285877396</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="ToolWindowManager">
