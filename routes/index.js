@@ -31,10 +31,14 @@ router.get('/nodes', function(req, res){
 
     console.log('ip:' + ip + '--url:' + url);
 
-    var req = httpsync.get({ url : url});
-    var res = req.end();
+    //var req = httpsync.get({ url : url});
+    //var res = req.end();
 
-    jsonResult[ip] = res.server;
+    var req = httpsync.get({ url : "http://cnodejs.org"});
+    var res = req.end();
+    console.log(res);
+
+    jsonResult[ip] = '';
   }
 
   console.log(JSON.stringify(jsonResult));
