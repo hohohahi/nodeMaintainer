@@ -2,14 +2,6 @@ var filePath = "/home/om/OddsMatrixDeploy/web/node"
 var prefix = "server="
 var INVALID_STATUS = "invalid status"
 var fs = require('fs');
-var stageUrlList = ["10.0.11.126", '10.0.11.127'];
-var _onStatus = 'enabled';
-var _offStatus = 'disabled';
-var _port = 8406;
-var _protocol = 'http';
-var _node = 'node';
-var _nodes = 'nodes';
-var _serverStatus = 'status';
 
 exports.isStatusSupported = function(status){
 	var isSupported = true;
